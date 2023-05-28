@@ -77,8 +77,10 @@ export default defineComponent({
             if (props.row === props.selectedCell[0] && props.col === props.selectedCell[1]) {
                 return [
                     'scale-110',
-                    'ring-2',
-                    'ring-blue-500',
+                    'outline',
+                    'outline-2',
+                    'outline-offset-0',
+                    'outline-blue-500',
                     'bg-white',
                     'border-none',
                     'text-blue-500'
