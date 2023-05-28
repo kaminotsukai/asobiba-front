@@ -91,7 +91,7 @@ export default defineComponent({
         const getReadonlyClassList = () => {
             if (props.readonly) {
                 return [
-                    'bg-gray-50'
+                    'bg-gray-100'
                 ]
             }
         }
