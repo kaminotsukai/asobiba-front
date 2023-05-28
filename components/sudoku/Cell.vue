@@ -1,11 +1,11 @@
 <template>
     <div
-        class="w-10 h-10 text-2xl border border-[0.5px]"
+        class="w-10 h-10 text-2xl border border-[0.5px] border-gray-400"
         :class="[getCellClassList(), getSelectedClassList()]"
     >
         <div
             class="flex items-center justify-center w-full h-full"
-            :class="{'font-semibold': !readonly}"
+            :class="[getReadonlyClassList()]"
             @click="selectCell"
         >
             {{ value === 0 ? '' : value }}
@@ -50,22 +50,22 @@ export default defineComponent({
         const getCellClassList = () => {
             const classes = []
             if (props.row === 0) {
-                classes.push('border-t-2', 'border-t-black')
+                classes.push('border-t-2', 'border-t-gray-500')
             }
             if (props.row === 8) {
-                classes.push('border-b-2', 'border-b-black')
+                classes.push('border-b-2', 'border-b-gray-500')
             }
             if (props.col === 0) {
-                classes.push('border-l-2', 'border-l-black')
+                classes.push('border-l-2', 'border-l-gray-500')
             }
             if (props.col === 8) {
-                classes.push('border-r-2', 'border-r-black')
+                classes.push('border-r-2', 'border-r-gray-500')
             }
             if ((props.row + 1) % 3 === 0) {
-                classes.push('border-b-2', 'border-b-black')
+                classes.push('border-b-2', 'border-b-gray-500')
             }
             if ((props.col + 1) % 3 === 0) {
-                classes.push('border-r-2', 'border-r-black')
+                classes.push('border-r-2', 'border-r-gray-500')
             }
             return classes
         }
@@ -86,10 +86,19 @@ export default defineComponent({
             }
         }
 
+        const getReadonlyClassList = () => {
+            if (props.readonly) {
+                return [
+                    'bg-gray-50'
+                ]
+            }
+        }
+
         return {
             selectCell,
             getCellClassList,
-            getSelectedClassList
+            getSelectedClassList,
+            getReadonlyClassList,
         }
     },
 })

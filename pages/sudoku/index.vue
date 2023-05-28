@@ -1,5 +1,5 @@
 <template>
-    <div class="px-2 pt-8">
+    <div class="px-2 pt-8 sudoku-font">
         <SudokuBoard/>
     </div>
 </template>
@@ -15,3 +15,11 @@ export default defineComponent({
     }
 })
 </script>
+
+<style scoped>
+.sudoku-font {
+    font-family: Arial,"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+    font-weight: bold;
+    color: #767d88;
+}
+</style>

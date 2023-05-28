@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="w-full">
-            <div class="flex justify-center font-display w-full sm:items-center">
+            <div class="flex justify-center w-full items-center">
                 <div class="grid grid-cols-9 grid-flow-col">
                     <div v-for="col, i1 in data.board" :key="i1">
                         <div v-for="cell, i2 in col" :key="i2">
@@ -22,7 +22,7 @@
             <div
                 v-for="value in 9"
                 :key="value"
-                class="h-16 border  rounded border-slate-200 font-display w-full bg-white items-center justify-center text-2xl cursor-pointer text-slate-700 flex"
+                class="h-16 border  rounded border-slate-200 font-display w-full bg-white items-center justify-center text-2xl cursor-pointer flex"
                 @click="inputNumber(value)"
             >{{ value }}</div>
         </div>
